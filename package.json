@@ -1,0 +1,41 @@
+{
+  "name": "artifact-center",
+  "version": "1.0.0",
+  "description": "Cross-session artifact center for DeepSeek Harness: agent tools that register deliverable files, plus a sidebar panel that filters them by category, extension or keyword.",
+  "type": "module",
+  "license": "MIT",
+  "author": "lishuo4096",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lishuo4096/artifact-center.git"
+  },
+  "homepage": "https://github.com/lishuo4096/artifact-center#readme",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "artifact",
+    "deliverables",
+    "sidebar"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  },
+  "meta": {
+    "title": "Artifact Center",
+    "description": "跨会话产物中心：agent 产出重要文件时登记/复制到统一目录，侧边栏面板支持按后缀分类筛选（pdf/excel/ppt/py/json…）。"
+  }
+}
